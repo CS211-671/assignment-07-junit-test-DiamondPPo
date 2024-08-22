@@ -1,11 +1,17 @@
 package ku.cs.models;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
+    private User user;
+    @BeforeEach
+        void setUp(){
+            user = new User("user01", "user1pass");
+    }
 
     @Test
     @DisplayName("Password should not store in plain text")
@@ -23,4 +29,9 @@ class UserTest {
         boolean actual = user.validatePassword("plain-p@ssw0rd");
         assertTrue(actual);
     }
+
+//    @Test
+//    public void testisUsername(){
+//        boolean actual = user.isUsername();
+//    }
 }
