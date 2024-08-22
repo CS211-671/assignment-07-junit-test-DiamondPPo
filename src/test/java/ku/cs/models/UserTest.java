@@ -30,8 +30,21 @@ class UserTest {
         assertTrue(actual);
     }
 
-//    @Test
-//    public void testisUsername(){
-//        boolean actual = user.isUsername();
-//    }
+    @Test
+    public void testisUsername(){
+        boolean actual = user.isUsername("user01");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testSetPassword(){
+        user.setPassword("123");
+        assertEquals(true, user.validatePassword("123"));
+    }
+
+    @Test
+    public void testValidatePassword(){
+        assertEquals(true, user.validatePassword("user1pass"));
+    }
+
 }

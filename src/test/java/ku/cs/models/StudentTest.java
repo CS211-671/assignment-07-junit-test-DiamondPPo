@@ -28,4 +28,11 @@ class StudentTest {
         s.changeName("5xxxxxxxxx");
         assertEquals("5xxxxxxxxx", s.getName());
     }
+
+    @Test
+    void testisID(){
+        Student s = new Student("6xxxxxxxxx", "test");
+        boolean actual = s.isId("6xxxxxxxxx");
+        assertTrue(actual);
+    }
 }
